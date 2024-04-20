@@ -6,23 +6,29 @@ export default class Form extends React.Component {
   }
 
   onSubmit = evt => {
-    
+    evt.preventDefault()
+      this.props.addTodo(this.state.name)
+      this.setState({
+        ...this.state,
+        name: ''
+      })
   }
 
   onChange = evt => {
-const{value} = evt.target
+  const{value} = evt.target
     this.setState({
-      name: value
+      ...this.state,
+      name:value
     })
   }
   
   render() {
-    const {addTodo} = this.props
+  
     return (
-      <Form onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit}>
         <input type='text' value={this.state.name} onChange={this.onChange}/>
         <input type='submit'/>
-      </Form>
+      </form>
     )
   }
 }

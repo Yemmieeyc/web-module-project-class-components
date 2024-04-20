@@ -7,7 +7,7 @@ let getId = () => ++id
 
 const initialTodos = [
   {id: getId(), name: "Walk the dog!", completed:false},
-  {id: getId(), name: "Bake cake!", completed:true},
+  {id: getId(), name: "Bake cake!", completed:false},
   {id: getId(), name: "Wash dishes!", completed:false},
 ]
 export default class App extends React.Component {
